@@ -11,7 +11,7 @@ use Tymon\JWTAuth\Exceptions\JWTException;
 class AuthController extends Controller
 {
 
-    
+    //Register a new user and generate JWT token.
     public function register(Request $request)
     {
         $user = User::create([
@@ -25,6 +25,7 @@ class AuthController extends Controller
         return response()->json(compact('token'));
     }
 
+    //Authenticate user and generate JWT token.
     public function login(Request $request)
     {
         $credentials = $request->only('email', 'password');
@@ -39,33 +40,14 @@ class AuthController extends Controller
 
         return response()->json(compact('token'));
     }
-
+    
+    //Logout the authenticated user.
     public function logout()
     {
         Auth::logout();
         return response()->json(['message' => 'Logged out successfully']);
     }
 
-    public function user()
-    {
-        $user = Auth::user();        
-        return response()->json(compact('user'));
-    }
-
-
-
-
-    
-    public function testRegister()
-    {
-        $user = User::create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
-            'password' => bcrypt('password123'),
-        ]);
-
-        return response()->json(['message' => 'Test user created']);
-    }
 
 
 }

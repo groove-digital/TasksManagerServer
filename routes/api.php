@@ -18,16 +18,15 @@ use App\Http\Controllers\TasksController;
 |
 */
 
-
+// -------------Authentication routes-----------------------------------
 Route::post('register', [AuthController::class, 'register']);
 Route::post('login', [AuthController::class, 'login']);
+
+// -------------Task management routes----------------------------------
 Route::middleware('auth:api')->group(function () {
     Route::post('logout', [AuthController::class, 'logout']);
-    Route::get('user', [AuthController::class, 'user']);
-
     Route::get('tasks', [TasksController::class, 'index']);
     Route::post('tasks', [TasksController::class, 'store']);
     Route::put('tasks/{task}', [TasksController::class, 'update']);
     Route::delete('tasks/{taskId}', [TasksController::class, 'destroy']);
-    
 });

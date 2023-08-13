@@ -10,7 +10,7 @@ use App\Models\Task;
 class TasksController extends Controller
 {
 
-    // --------- get tasks------------------
+    // --------- Get a list of tasks------------------
     public function index()
     {
         $user = Auth::user();        
@@ -20,7 +20,7 @@ class TasksController extends Controller
     }
 
 
-    // --------- create task------------------
+    // --------- Store a new tasks------------------
     public function store(Request $request)
     {
         $request->validate(Task::rules());
@@ -36,7 +36,7 @@ class TasksController extends Controller
     }
 
 
-    // --------- update task------------------
+    // --------- Update a task------------------
     public function update(Request $request, Task $task)
     {
         $request->validate(Task::rules(true, $task->id));
@@ -50,6 +50,7 @@ class TasksController extends Controller
         return response()->json(compact('task'));
     }
 
+    // --------- Delete a task------------------
     public function destroy($taskId)
     {
         Task::find($taskId)->delete();
@@ -57,18 +58,6 @@ class TasksController extends Controller
         return response()->json(['message' => 'Task deleted']);
     }
 
-
-// ---------test methode create task------------------
-    public function createSampleTask()
-    {
-        Task::create([
-            'title' => 'Sample Task 2',
-            'description' => 'This is a sample task description.',
-            'completed' => false,
-        ]);
-
-        return response()->json(['message' => 'Sample task created.']);
-    }
 }
 
 

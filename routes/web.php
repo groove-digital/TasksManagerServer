@@ -1,9 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\TasksController;
-use App\Http\Controllers\AuthController;
-
 
 /*
 |--------------------------------------------------------------------------
@@ -19,7 +16,4 @@ use App\Http\Controllers\AuthController;
 Route::get('/', function () {
     return view('welcome');
 });
-
-Route::get('/create-sample-task', [TasksController::class, 'createSampleTask']);
-Route::get('/test-register', [AuthController::class, 'testRegister']);
 
