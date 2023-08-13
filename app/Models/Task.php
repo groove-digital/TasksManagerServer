@@ -11,11 +11,12 @@ class Task extends Eloquent
     protected $collection = 'tasks';
     protected $fillable = ['title', 'description', 'completed','user_id'];
 
-    public static function rules($update = false, $id = null)
+    public static function rules($request = false, $id = null)
     {
         $rules = [
-            'title' => 'required|string|min:3',
-            'description' => 'required|string|min:6',
+           // 'title' => ['required', 'string', 'min:5', 'max:100','unique:tasks'],
+            'title' => 'required|string|min:5|max:100',
+            'description' => 'required|string|min:10',
             'completed' => 'boolean',
         ];
 
