@@ -17,9 +17,9 @@ Follow the steps below to set up and run the backend on your local machine.
         'database' => 'taskmanager',  
     ],
      
-    Replace `username`, `password`, and `cluster.mongodb.net` with your MongoDB Atlas credentials.
+    Replace `username`, `password`, and `cluster.mongodb.net` with your MongoDB credentials.
       
-#### Alternatively, you can use my MongoDB Atlas cluster link for quick setup that has already been configured.
+#### Alternatively, you can use my MongoDB cluster link for quick setup that has already been configured.
 
 5. Start the backend server: `php artisan serve`
 6. The API will be available at http://localhost:8000
