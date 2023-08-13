@@ -11,10 +11,10 @@ Follow the steps below to set up and run the backend on your local machine.
 3. Install Composer dependencies: `composer install`
 4. Configure your MongoDB database settings in `config/database.php` by modifying the `mongodb` configuration:  
   
-    'mongodb' => [
-        'driver' => 'mongodb',
-        'dsn' => env('DB_URI', 'mongodb+srv://username:password@cluster.mongodb.net/?retryWrites=true&w=majority'),
-        'database' => 'taskmanager',
+    'mongodb' => [  
+        'driver' => 'mongodb',  
+        'dsn' => env('DB_URI', 'mongodb+srv://username:password@cluster.mongodb.net/?retryWrites=true&w=majority'),  
+        'database' => 'taskmanager',  
     ],
      
     Replace `username`, `password`, and `cluster.mongodb.net` with your MongoDB Atlas credentials.
