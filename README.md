@@ -9,14 +9,16 @@ Follow the steps below to set up and run the backend on your local machine.
 1. Clone this repository to your local machine.
 2. Navigate to the backend project directory: `cd TasksManagerServer`
 3. Install Composer dependencies: `composer install`
-4. Configure your MongoDB database settings in `config/database.php` by modifying the `mongodb` configuration:
+4. Configure your MongoDB database settings in `config/database.php` by modifying the `mongodb` configuration:  
+  
     'mongodb' => [
         'driver' => 'mongodb',
         'dsn' => env('DB_URI', 'mongodb+srv://username:password@cluster.mongodb.net/?retryWrites=true&w=majority'),
         'database' => 'taskmanager',
     ],
+     
     Replace `username`, `password`, and `cluster.mongodb.net` with your MongoDB Atlas credentials.
-
+      
 #### Alternatively, you can use my MongoDB Atlas cluster link for quick setup that has already been configured.
 
 5. Start the backend server: `php artisan serve`
