@@ -36,6 +36,7 @@ Follow the steps below to set up and run the backend on your local machine.
   - `DELETE /api/tasks/{taskId}`: Delete a task.
 
 - Secure Authentication: JWT tokens are used for user authentication.
+- Validation Rules for Tasks
 - MongoDB Database: Tasks are stored in a MongoDB database (MongoDB Atlas).
 
 ## Usage
